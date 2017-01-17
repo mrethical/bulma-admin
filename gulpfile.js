@@ -105,7 +105,8 @@ gulp.task('font-awesome-dev', () => {
  */
 
 // Update dist and pages
-gulp.task('dist', ['html', 'minify-css', 'minify-js', 'vendor']);
+gulp.task('dist', ['sass', 'js', 'html', 'vendor', 'minify-css', 'minify-js']);
+gulp.task('dist-post', ['minify-css', 'minify-js']);
 
 // Compile html
 gulp.task('html', () => {
@@ -124,27 +125,29 @@ gulp.task('sass', () => {
     gulp.src("src/sass/*.scss")
         .pipe(sass())
         .on('error', onError)
-        .pipe(gulp.dest("dist/css"));
+        .pipe(gulp.dest("dist/css"))
+        .pipe(gulp.dest("dist/css/build"));
 });
 
 // Minify compiled CSS
 gulp.task('minify-css', () => {
-    gulp.src('dist/css/*.css')
+    gulp.src('dist/css/build/*.css')
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('dist/css'));
 });
 
-// Copy JS to test
+// Copy JS to dist
 gulp.task('js', () => {
     gulp.src(['src/js/*.js'])
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('dist/js'))
+        .pipe(gulp.dest('dist/js/build'));
 })
 
 // Minify JS
-gulp.task('minify-js', ['js'],  (cb) => {
+gulp.task('minify-js', (cb) => {
     pump([
-            gulp.src('dist/js/*.js')
+            gulp.src('dist/js/build/*.js')
                 .pipe(babel({
                     presets: ['es2015']
                 })),
