@@ -5,6 +5,11 @@ var cleanCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var rename = require("gulp-rename");
 
+var onError = function(error) {
+    console.log(error.toString());
+    this.emit('end');
+};
+
 // Static Server + watching scss/js/html files
 gulp.task('dev', function() {
     browserSync.init({
@@ -12,15 +17,16 @@ gulp.task('dev', function() {
             baseDir: "./"
         }
     });
-    gulp.watch("scss/*.scss", ['sass']);
-    gulp.watch("js/*.js", ['js']);
+    gulp.watch("sass/**/*.scss", ['sass']);
+    gulp.watch("js/**/*.js", ['js']);
     gulp.watch("index.html").on('change', browserSync.reload);
 });
 
 // Compile sass into CSS and copy CSS to dist
 gulp.task('sass', function() {
-    return gulp.src("scss/*.scss")
+    return gulp.src("sass/*.scss")
         .pipe(sass())
+        .on('error', onError)
         .pipe(gulp.dest("dist/css"))
         .pipe(browserSync.stream());
 });
