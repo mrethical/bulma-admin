@@ -1,0 +1,28 @@
+
+.nav {
+    border-bottom: 1px solid $grey-lighter;
+    .nav-item.brand {
+        font-size: 17px;
+    }
+}
+.button-notify {
+    width: 45px;
+    .icon {
+        font-size: 16px;
+        position: relative;
+        left: 10px;
+        top: 5px;
+    }
+    .tag {
+        width: 15px;
+        height: 15px;
+        padding: 5px;
+        font-size: 10px;
+        position: relative;
+        bottom: 5px;
+        right: 4px;
+    }
+}
+.button-notify:hover {
+    background-color: $hover-bg-primary;
+}
