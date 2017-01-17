@@ -1,0 +1,11 @@
+{
+  "name": "bulma-admin",
+  "version": "0.1.0",
+  "description": "A very simple admin html template using bulma css.",
+  "main": "sass/bulma-admin.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
