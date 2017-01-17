@@ -54,4 +54,4 @@ gulp.task('minify-js', ['js'], function() {
 gulp.task('all', ['sass', 'minify-css', 'js', 'minify-js']);
 
 // Run dev as default
-gulp.task('default', ['dev']);
+gulp.task('default', ['all']);
