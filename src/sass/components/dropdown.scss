@@ -1,0 +1,43 @@
+.dropdown {
+  display: none;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  z-index: 1000;
+  border-radius: 3px;
+  padding: 10px 0px;
+  .dropdown-link {
+    padding: 0px 15px;
+  }
+  .divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: $grey-lighter;
+  }
+    .image img {
+        max-height: none;
+    }
+}
+
+.dropdown.dropdown-messages {
+  width: 310px;
+  min-width: 0;
+  padding: 0px;
+  .dropdown-link {
+    padding: 10px 15px;
+  }
+}
+
+.dropdown-toggle:hover {
+    .dropdown {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 769px) {
+  .dropdown {
+    right: 0px;
+    left: auto;
+  }
+}
