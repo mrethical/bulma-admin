@@ -1,26 +1,53 @@
 
-var acc = document.getElementsByClassName("panel-title");
+const classClick = function(className, action) {
+    var elements = document.getElementsByClassName(className);
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].onclick = function(){
+            action(this);
+        }
+    }
+}
 
-for (let i = 0; i < acc.length; i++) {
-    acc[i].onclick = function(){
-        let parent = this.parentNode;
-        for (let j = 0; j < parent.childNodes.length; j++) {
-            let transition = function(panel) {
-                if (panel.style.maxHeight){
-                    panel.style.maxHeight = null;
-                    setTimeout(function(){
-                        parent.classList.remove("is-active")
-                    }, 200);
-                } else {
-                    parent.classList.toggle("is-active");
-                    panel.style.maxHeight = panel.scrollHeight + 'px';
-                }
+classClick('panel-title', function(element) {
+    let parent = element.parentNode;
+    for (let j = 0; j < parent.childNodes.length; j++) {
+        let transition = function(panel) {
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+                setTimeout(function(){
+                    parent.classList.remove("is-active");
+                }, 200);
+            } else {
+                parent.classList.toggle("is-active");
+                panel.style.maxHeight = panel.scrollHeight + 'px';
             }
-            if (parent.childNodes[j].className == "sub-panel is-active") {
-                transition(parent.childNodes[j]);
-            } else if (parent.childNodes[j].className == "sub-panel") {
+        }
+        if (parent.childNodes[j].className) {
+            if (parent.childNodes[j].className.indexOf("sub-panel") >= 0) {
                 transition(parent.childNodes[j]);
             }
         }
     }
-}
+});
+
+classClick('nav-toggle', function(element) {
+    let sidebar = document.getElementsByClassName('sidebar');
+    for (let i = 0; i < sidebar.length; i++) {
+        let transition = function(sidebar) {
+            if (sidebar.style.maxHeight){
+                sidebar.style.maxHeight = null;
+                setTimeout(function(){
+                    sidebar.classList.remove("is-active");
+                    element.classList.remove("is-active");
+                }, 200);
+            } else {
+                sidebar.classList.toggle("is-active");
+                element.classList.toggle("is-active");
+                sidebar.style.maxHeight = sidebar.scrollHeight + 'px';
+            }
+        }
+        if (sidebar[i].className) {
+            transition(sidebar[i]);
+        }
+    }
+});

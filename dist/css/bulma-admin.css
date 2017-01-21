@@ -106,3 +106,6 @@
 .wrapper {
   width: 100%;
   height: 450px; }
+
+.nav-toggle.is-active span {
+  background-color: #363636; }
