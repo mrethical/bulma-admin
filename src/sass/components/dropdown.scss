@@ -41,3 +41,9 @@
     left: auto;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .dropdown-toggle {
+    display: inline-block;
+  }
+}
