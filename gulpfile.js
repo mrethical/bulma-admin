@@ -105,7 +105,7 @@ gulp.task('font-awesome-dev', () => {
  */
 
 // Update dist and pages
-gulp.task('dist', ['sass', 'js', 'html', 'vendor', 'minify-css', 'minify-js']);
+gulp.task('dist', ['sass', 'js', 'html', 'vendor', 'minify-css', 'create-scss', 'minify-js']);
 gulp.task('dist-post', ['minify-css', 'minify-js']);
 
 // Compile html
@@ -134,6 +134,15 @@ gulp.task('minify-css', () => {
     gulp.src('dist/css/build/*.css')
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('dist/css'));
+});
+
+// Create SCSS
+gulp.task('create-scss', () => {
+    gulp.src('dist/css/build/*.css')
+        .pipe(rename((path) => {
+            path.extname = ".scss"
+        }))
         .pipe(gulp.dest('dist/css'));
 });
 
