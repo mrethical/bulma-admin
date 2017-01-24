@@ -1,13 +1,14 @@
 .dropdown {
   display: none;
-  left: 0;
+  right: 0;
   position: absolute;
   top: 100%;
   z-index: 1000;
   border-radius: 3px;
-  padding: 10px 0px;
-  .dropdown-link {
-    padding: 0px 15px;
+  min-width: 100px;
+  padding: 5px 0px;
+  .dropdown-link {    
+    line-height: 25px;
   }
   .divider {
     height: 1px;
@@ -15,17 +16,18 @@
     overflow: hidden;
     background-color: $grey-lighter;
   }
-    .image img {
-        max-height: none;
-    }
+  .image img {
+      max-height: none;
+  }
 }
 
 .dropdown.dropdown-messages {
   width: 310px;
   min-width: 0;
-  padding: 0px;
+  margin: 0px;
   .dropdown-link {
     padding: 10px 15px;
+    line-height: 21px;
   }
 }
 
@@ -33,13 +35,6 @@
     .dropdown {
         display: block;
     }
-}
-
-@media screen and (min-width: 769px) {
-  .dropdown {
-    right: 0px;
-    left: auto;
-  }
 }
 
 @media screen and (max-width: 768px) {

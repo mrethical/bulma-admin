@@ -6,7 +6,7 @@
     }
 }
 .button-notify {
-    width: 45px;
+    width: 60px;
     .icon {
         font-size: 16px;
         position: relative;
@@ -25,4 +25,26 @@
 }
 .button-notify:hover {
     background-color: $hover-bg-primary;
+    position: relative;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-right.is-active {
+        display: flex;
+        height: 49px;
+        .nav-item.button-notify  {
+            border-top: none;
+            padding: 0.5rem 0.75rem;
+            .icon {
+                left: 7px;
+                top: 10px;
+            }
+            .tag {
+                position: static;
+            }
+            .tag:last-child:not(:first-child) {
+                margin-left: 0px;
+            }
+        }
+    }
 }
