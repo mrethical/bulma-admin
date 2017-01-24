@@ -106,7 +106,7 @@ gulp.task('font-awesome-dev', () => {
 
 // Update dist and pages
 gulp.task('dist', ['sass', 'js', 'html', 'vendor', 'minify-css', 'create-scss', 'minify-js']);
-gulp.task('dist-post', ['minify-css', 'minify-js']);
+gulp.task('dist-post', ['minify-css', 'create-scss', 'minify-js']);
 
 // Compile html
 gulp.task('html', () => {
