@@ -38,6 +38,9 @@
 }
 
 @media screen and (max-width: 768px) {
+  .dropdown.dropdown-messages {
+    left: 10px;
+  }
   .dropdown-toggle {
     display: inline-block;
   }

@@ -3,6 +3,7 @@
     border-bottom: 1px solid $grey-lighter;
     .nav-item.brand {
         font-size: 17px;
+        padding-left: 20px;
     }
 }
 .button-notify {
@@ -29,8 +30,12 @@
 }
 
 @media screen and (max-width: 768px) {
+    .nav-item.brand {
+    }
     .nav-right.is-active {
+        padding-left: 10px;
         display: flex;
+        justify-content: flex-start;
         height: 49px;
         .nav-item.button-notify  {
             border-top: none;
@@ -45,6 +50,9 @@
             .tag:last-child:not(:first-child) {
                 margin-left: 0px;
             }
+        }
+        .nav-item.button-notify.big-dropdown {
+            position: static;
         }
     }
 }

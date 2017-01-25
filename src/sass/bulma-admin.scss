@@ -6,8 +6,8 @@
 @import "components/dropdown.scss";
 
 .wrapper {
-    width: 100%;
     height: 450px; // make dynamic
+    padding: 0 30px;
 }
 
 .nav-toggle.is-active span {
