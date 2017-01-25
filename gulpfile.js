@@ -99,7 +99,7 @@ gulp.task('font-awesome-dev', () => {
         .pipe(browserSync.stream());
 });
 
-// Copy Font-Awesome fonts to test
+// Copy Images to test
 gulp.task('images-dev', () => {
     gulp.src(['src/images/*.*'])
         .pipe(gulp.dest('test/images'))
@@ -112,7 +112,7 @@ gulp.task('images-dev', () => {
  */
 
 // Update dist and pages
-gulp.task('dist', ['sass', 'js', 'html', 'vendor', 'minify-css', 'create-scss', 'minify-js']);
+gulp.task('dist', ['sass', 'js', 'html', 'vendor', 'images', 'minify-css', 'create-scss', 'minify-js']);
 gulp.task('dist-post', ['minify-css', 'create-scss', 'minify-js']);
 
 // Compile html
@@ -205,6 +205,13 @@ gulp.task('vendor-js', () => {
 gulp.task('font-awesome', () => {
     gulp.src(['node_modules/font-awesome/fonts/*.*'])
         .pipe(gulp.dest('dist/fonts'))
+        .pipe(browserSync.stream());
+});
+
+// Copy Images to dist
+gulp.task('images', () => {
+    gulp.src(['src/images/*.*'])
+        .pipe(gulp.dest('images'))
         .pipe(browserSync.stream());
 });
 
