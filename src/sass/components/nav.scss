@@ -10,7 +10,7 @@
         padding-right: 20px;
         position: relative;
     }
-    width: 60px;
+    min-width: 60px;
     .icon {
         display: block;
         font-size: 16px;
@@ -26,6 +26,10 @@
         position: absolute;
         bottom: 0px;
         left: 15px;
+    }
+    .prof-pic {
+        border-radius: 15px;
+        margin: 0px 15px;
     }
 }
 .button-notify:hover {

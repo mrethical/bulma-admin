@@ -99,6 +99,13 @@ gulp.task('font-awesome-dev', () => {
         .pipe(browserSync.stream());
 });
 
+// Copy Font-Awesome fonts to test
+gulp.task('images-dev', () => {
+    gulp.src(['src/images/*.*'])
+        .pipe(gulp.dest('test/images'))
+        .pipe(browserSync.stream());
+});
+
 /**
  *  DISTRIBUTION
  * 

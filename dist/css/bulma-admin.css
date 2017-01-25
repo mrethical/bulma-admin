@@ -4,20 +4,27 @@
     font-size: 17px; }
 
 .button-notify {
-  width: 60px; }
+  min-width: 60px; }
+  .button-notify a {
+    padding-right: 20px;
+    position: relative; }
   .button-notify .icon {
+    display: block;
     font-size: 16px;
-    position: relative;
-    left: 10px;
-    top: 5px; }
+    position: absolute;
+    left: 12px;
+    bottom: -10px; }
   .button-notify .tag {
     width: 15px;
     height: 15px;
     padding: 5px;
     font-size: 10px;
-    position: relative;
-    bottom: 5px;
-    right: 4px; }
+    position: absolute;
+    bottom: 0px;
+    left: 15px; }
+  .button-notify .prof-pic {
+    border-radius: 15px;
+    margin: 0px 15px; }
 
 .button-notify:hover {
   background-color: whitesmoke;
@@ -25,18 +32,21 @@
 
 @media screen and (max-width: 768px) {
   .nav-right.is-active {
+    padding-left: 10px;
     display: flex;
+    justify-content: flex-start;
     height: 49px; }
     .nav-right.is-active .nav-item.button-notify {
       border-top: none;
       padding: 0.5rem 0.75rem; }
       .nav-right.is-active .nav-item.button-notify .icon {
-        left: 7px;
-        top: 10px; }
+        left: 3px;
+        bottom: -7px; }
       .nav-right.is-active .nav-item.button-notify .tag {
-        position: static; }
-      .nav-right.is-active .nav-item.button-notify .tag:last-child:not(:first-child) {
-        margin-left: 0px; } }
+        left: 5px;
+        bottom: 3px; }
+    .nav-right.is-active .nav-item.button-notify.big-dropdown {
+      position: static; } }
 
 .sidebar {
   border-bottom: 1px solid #dbdbdb; }
@@ -53,7 +63,8 @@
   .sidebar {
     display: none; }
   .sidebar.is-active {
-    display: block; } }
+    display: block;
+    margin-top: 49px; } }
 
 /**
  *  Panel Item
@@ -150,12 +161,14 @@
   display: block; }
 
 @media screen and (max-width: 768px) {
+  .dropdown.dropdown-messages {
+    left: 10px; }
   .dropdown-toggle {
     display: inline-block; } }
 
 .wrapper {
-  width: 100%;
-  height: 450px; }
+  height: 450px;
+  padding: 0 30px; }
 
 .nav-toggle.is-active span {
   background-color: #363636; }
