@@ -3,25 +3,29 @@
     border-bottom: 1px solid $grey-lighter;
     .nav-item.brand {
         font-size: 17px;
-        padding-left: 20px;
     }
 }
 .button-notify {
+    a {
+        padding-right: 20px;
+        position: relative;
+    }
     width: 60px;
     .icon {
+        display: block;
         font-size: 16px;
-        position: relative;
-        left: 10px;
-        top: 5px;
+        position: absolute;
+        left: 12px;
+        bottom: -10px;
     }
     .tag {
         width: 15px;
         height: 15px;
         padding: 5px;
         font-size: 10px;
-        position: relative;
-        bottom: 5px;
-        right: 4px;
+        position: absolute;
+        bottom: 0px;
+        left: 15px;
     }
 }
 .button-notify:hover {
@@ -40,15 +44,13 @@
         .nav-item.button-notify  {
             border-top: none;
             padding: 0.5rem 0.75rem;
-            .icon {
-                left: 7px;
-                top: 10px;
+            .icon {    
+                left: 3px;
+                bottom: -7px;
             }
             .tag {
-                position: static;
-            }
-            .tag:last-child:not(:first-child) {
-                margin-left: 0px;
+                left: 5px;
+                bottom: 3px;
             }
         }
         .nav-item.button-notify.big-dropdown {
