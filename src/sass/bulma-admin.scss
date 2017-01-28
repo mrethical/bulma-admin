@@ -5,6 +5,13 @@
 @import "components/sidebar.scss";
 @import "components/dropdown.scss";
 
+@media screen and (max-width: 768px) {
+	header {
+		position: fixed;
+    	width: 100%;
+	}
+}
+
 .wrapper {
     height: 450px; // make dynamic
     padding: 0 30px;

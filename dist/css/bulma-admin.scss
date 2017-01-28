@@ -61,7 +61,10 @@
 
 @media screen and (max-width: 768px) {
   .sidebar {
-    display: none; }
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out; }
   .sidebar.is-active {
     display: block;
     margin-top: 49px; } }
@@ -193,6 +196,11 @@
     left: 10px; }
   .dropdown-toggle {
     display: inline-block; } }
+
+@media screen and (max-width: 768px) {
+  header {
+    position: fixed;
+    width: 100%; } }
 
 .wrapper {
   height: 450px;

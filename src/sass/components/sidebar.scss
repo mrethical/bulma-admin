@@ -19,6 +19,9 @@ $title-height: 45px;
 @media screen and (max-width: 768px) {
   .sidebar {
     display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
   }
   .sidebar.is-active {
     display: block;
