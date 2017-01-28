@@ -51,3 +51,20 @@ classClick('nav-toggle', function(element) {
         }
     }
 });
+
+function resizeWrapper() {
+    var topOffset = 49;
+    var height = ((this.window.innerHeight > 0) ? this.window.innerHeight : this.screen.height) - 1;
+    height = height - topOffset;
+    if (height < 1) height = 1;
+    if (height > topOffset) {
+        document.getElementById('wrapper').style.height = height + "px";
+    }
+}
+
+window.addEventListener('load', function() {
+    resizeWrapper();
+});
+window.addEventListener('resize', function() {
+    resizeWrapper();
+});
