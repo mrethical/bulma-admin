@@ -9,10 +9,12 @@ const babel           = require('gulp-babel');
 const uglify          = require('gulp-uglify');
 const rename          = require("gulp-rename");
 
-const onError = function(error) {
+const onError = (error) => {
     console.log(error.toString());
     this.emit('end');
 };
+
+const babel_presets = ["es2015", "stage-2"];
 
 /**
  *  DEVELOPMENT
@@ -62,6 +64,11 @@ gulp.task('sass-dev', () => {
 // Copy JS to test
 gulp.task('js-dev', () => {
     gulp.src(['src/js/*.js'])
+        .pipe(
+            babel({
+                presets: babel_presets
+            })
+        )
         .pipe(gulp.dest('test/js'))
         .pipe(browserSync.stream());
 });
@@ -156,6 +163,11 @@ gulp.task('create-scss', () => {
 // Copy JS to dist
 gulp.task('js', () => {
     gulp.src(['src/js/*.js'])
+        .pipe(
+            babel({
+                presets: babel_presets
+            })
+        )
         .pipe(gulp.dest('dist/js'))
         .pipe(gulp.dest('dist/js/build'));
 })
@@ -165,7 +177,7 @@ gulp.task('minify-js', (cb) => {
     pump([
             gulp.src('dist/js/build/*.js')
                 .pipe(babel({
-                    presets: ['es2015']
+                    presets: babel_presets
                 })),
             uglify(),
             rename({ suffix: '.min' }),
