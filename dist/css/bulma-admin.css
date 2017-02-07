@@ -23,6 +23,8 @@
     bottom: 0px;
     left: 15px; }
   .button-notify .prof-pic {
+    width: 25px;
+    height: 25px;
     border-radius: 15px;
     margin: 0px 15px; }
 
@@ -88,7 +90,8 @@
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, transparent 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#00000000',GradientType=0 ); }
     .panel-highlight .prof-pic {
-      max-height: 100%;
+      width: 60px;
+      height: 60px;
       border-radius: 45px;
       display: inline-block; }
     .panel-highlight .panel-highlight-text {

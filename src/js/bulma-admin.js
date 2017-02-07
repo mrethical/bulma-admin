@@ -39,9 +39,14 @@ classClick(link_class, function(element, sp, ac) {
     }
 }, subpanel, active_class);
 
+let sidebar_clone = document.getElementById(sidebar);
+let panel_items = sidebar_clone.getElementsByClassName('panel-item');
+let panel_highlights = sidebar_clone.getElementsByClassName('panel-highlight');
+let maxHeight = (panel_items.length - panel_highlights.length) * 45 + 5;
+
 // sb = sidebar class name
 // ac = active class name
-classClick(hamburger, function(element, sb, ac) {
+classClick(hamburger, function(element, sb, ac, mh) {
     let sidebar = document.getElementById(sb);
     let transition = (sidebar) => {
         if (sidebar.style.maxHeight){
@@ -54,13 +59,13 @@ classClick(hamburger, function(element, sb, ac) {
             sidebar.classList.toggle(ac);
             element.classList.toggle(ac);
             sidebar.style.maxHeight = sidebar.scrollHeight + 'px';
+            setTimeout(function(){
+                sidebar.style.maxHeight = mh + 'px'
+            }, 200);
         }
     }
     transition(sidebar);
-}, sidebar, active_class);
-
-let sidebar_clone = document.getElementById(sidebar);
-console.log(sidebar_clone.getElementsByClassName('has-sub-panel'));
+}, sidebar, active_class, maxHeight);
 
 function resizeWrapper(wrapper, window) {
     var topOffset = 49;

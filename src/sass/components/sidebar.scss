@@ -49,7 +49,8 @@ $title-height: 45px;
         background: linear-gradient(to bottom,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#00000000',GradientType=0 );
         .prof-pic {
-            max-height: 100%;
+            width: 60px;
+            height: 60px;
             border-radius: 45px;
             display: inline-block;
         }
