@@ -200,11 +200,6 @@
   .dropdown-toggle {
     display: inline-block; } }
 
-@media screen and (max-width: 768px) {
-  header {
-    position: fixed;
-    width: 100%; } }
-
 #wrapper {
   padding: 0 30px; }
 
