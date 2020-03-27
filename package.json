@@ -4,6 +4,12 @@
   "description": "A very simple admin html template using bulma css.",
   "author": "muffeen",
   "license": "MIT",
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "graceful-fs": "4.2.3"
+  },
   "dependencies": {
     "bulma": "^0.3.1"
   },
