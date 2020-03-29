@@ -5,31 +5,31 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.1/css/bulma.css" />
     <link rel="stylesheet" href="../dist/css/bulma-admin.min.css">
+
 </head>
 
 <body>
     <header>
-        <nav class="nav has-shadow" role="navigation">
-            <div class="container is-fluid">
-                <div class="nav-left">
-                    <a class="nav-item brand">Bulma Admin</a>
-                </div>
-                <span class="nav-toggle">
-
-                    <span></span>
-                <span></span>
-                <span></span>
-                </span>
-                <ul class="nav-right nav-menu is-active">
-                    <li class="nav-item dropdown-toggle button-notify big-dropdown">
-                        <a href="#">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="./">Bulma Admin</a>
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="navbar-item has-dropdown is-hoverable dropdown-toggle button-notify big-dropdown">
+                        <a href="#" class="navbar-link">
                             <span class="icon is-small"><i class="fa fa-envelope"></i></span>
                             <span class="tag is-primary">1</span>
                         </a>
-                        <ul class="dropdown dropdown-messages box">
+                        <ul class="navbar-dropdown dropdown dropdown-messages box">
                             <li>
                                 <a class="dropdown-link media" href="#">
                                     <div class="media-left">
@@ -99,48 +99,46 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
-                    <li class="nav-item dropdown-toggle button-notify">
-                        <a href="#">
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable dropdown-toggle button-notify">
+                        <a href="#" class="navbar-link">
                             <span class="icon is-small"><i class="fa fa-tasks"></i></span>
                             <span class="tag is-primary">1</span>
                         </a>
-                        <ul class="dropdown box">
-                            <li>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
                                 <a class="dropdown-link">Link 1</a>
-                            </li>
-                            <li>
+                            </a>
+                            <a class="navbar-item">
                                 <a class="dropdown-link">Link 2</a>
-                            </li>
-                            <li class="divider">
-                            </li>
-                            <li>
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item">
                                 <a class="dropdown-link">Link 3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown-toggle button-notify">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable dropdown-toggle button-notify">
                         <img class="prof-pic" src="../images/prof-pic.png" />
-                        <a href="#">
+                        <a href="#" class="navbar-link">
 
                             John
 
                         </a>
-                        <ul class="dropdown box">
-                            <li>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
                                 <a class="dropdown-link">Link 1</a>
-                            </li>
-                            <li>
+                            </a>
+                            <a class="navbar-item">
                                 <a class="dropdown-link">Link 2</a>
-                            </li>
-                            <li class="divider">
-                            </li>
-                            <li>
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item">
                                 <a class="dropdown-link">Link 3</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
         <div id="sidebar" class="panel sidebar" role="navigation">

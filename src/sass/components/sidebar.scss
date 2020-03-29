@@ -1,4 +1,7 @@
 
+@import "../base/variables";
+
+
 $title-height: 45px;
 
 .sidebar {
@@ -44,7 +47,7 @@ $title-height: 45px;
         padding: 15px 30px;
         vertical-align: center;
         position: relative;
-        background: -moz-linear-gradient(top,  rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%); 
+        background: -moz-linear-gradient(top,  rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
         background: -webkit-linear-gradient(top,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
         background: linear-gradient(to bottom,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#00000000',GradientType=0 );
@@ -55,8 +58,8 @@ $title-height: 45px;
             display: inline-block;
         }
         .panel-highlight-text {
-            display: inline-block;        
-            margin-left: 15px; 
+            display: inline-block;
+            margin-left: 15px;
             bottom: 20px;
             position: absolute;
         }

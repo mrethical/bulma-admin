@@ -14,11 +14,11 @@ const onError = (error) => {
     this.emit('end');
 };
 
-const babel_presets = ["es2015", "stage-2"];
+const babel_presets = ['babel-preset-env'];
 
 /**
  *  DEVELOPMENT
- * 
+ *
  */
 
 // Static Server
@@ -31,7 +31,9 @@ gulp.task('serve', () => {
 });
 
 // watching scss/js/html files
-gulp.task('dev', ['serve'], () => {
+gulp.task('dev', [
+    'serve', 'vendor-dev', 'images-dev', 'html-dev', 'sass-dev', 'js-dev',
+], () => {
     gulp.watch("src/html/**/*.html", ['html-dev']).on('change', browserSync.reload);
     gulp.watch("src/sass/**/*.scss", ['sass-dev']);
     gulp.watch("src/js/**/*.js", ['js-dev']);
@@ -101,7 +103,7 @@ gulp.task('vendor-js-dev', () => {
 
 // Copy Font-Awesome fonts to test
 gulp.task('font-awesome-dev', () => {
-    gulp.src(['node_modules/font-awesome/fonts/*.*'])
+    gulp.src(['node_modules/@fortawesome/fontawesome-free/webfonts/*.*'])
         .pipe(gulp.dest('test/fonts'))
         .pipe(browserSync.stream());
 });
@@ -115,7 +117,7 @@ gulp.task('images-dev', () => {
 
 /**
  *  DISTRIBUTION
- * 
+ *
  */
 
 // Update dist and pages
@@ -170,7 +172,7 @@ gulp.task('js', () => {
         )
         .pipe(gulp.dest('dist/js'))
         .pipe(gulp.dest('dist/js/build'));
-})
+});
 
 // Minify JS
 gulp.task('minify-js', (cb) => {
@@ -215,7 +217,7 @@ gulp.task('vendor-js', () => {
 
 // Copy Font-Awesome fonts to dist
 gulp.task('font-awesome', () => {
-    gulp.src(['node_modules/font-awesome/fonts/*.*'])
+    gulp.src(['node_modules/@fortawesome/fontawesome-free/webfonts/*.*'])
         .pipe(gulp.dest('dist/fonts'))
         .pipe(browserSync.stream());
 });
